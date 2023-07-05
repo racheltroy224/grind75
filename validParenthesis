@@ -1,0 +1,46 @@
+//this solutions runtime was 0 ms beat 100% of previous attempts on leetcode
+//this solutions memory was 6.2 MB which bea 78.37% of previous attempts on leetcode
+
+class Solution {
+public:
+    bool isValid(string s) {
+        
+        if(s[0] == ')' || s[0] == '}' || s[0] == ']')
+        {
+            return false;
+        }
+        
+        if(s.length()%2 == 1)
+        {
+            return false;
+        }
+
+        vector<char> pars;
+        for(int i = 0; i < s.length(); i++)
+        {
+            if(s[i] == '(' || s[i] == '{' || s[i] == '[')
+            {
+                pars.push_back(s[i]);
+            } else if (pars.empty()) {
+                return false;
+            } else if (s[i] == ')' && pars.back() == '('){
+                pars.pop_back();
+            } else if (s[i] == ']' && pars.back() == '['){
+                pars.pop_back();
+            } else if (s[i] == '}' && pars.back() == '{'){
+                pars.pop_back();
+            } else {
+                return false;
+            }
+            
+        }
+
+        if(pars.empty())
+        {
+            return true;
+        } else {
+            return false;
+        }
+        
+    }
+};
