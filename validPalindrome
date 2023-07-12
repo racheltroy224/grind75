@@ -1,0 +1,38 @@
+//not completed
+
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        
+        string pal = "";
+        for(int i = 0; i < s.length(); i++)
+        {
+            if(isalpha(s[i]))
+            {
+                pal.push_back(tolower(s[i]));
+            }
+        }
+
+        if(pal.length() == 0)
+        {
+            return true;
+        } 
+        string firstHalf = pal.substr(0, pal.length()/2);
+        string secondHalf = pal.substr((pal.length()/2), pal.length() - 1);
+        string second = "";
+
+        for(int i = secondHalf.length() - 1; i >= 0; i--)
+        {
+            second.push_back(secondHalf[i]);
+        }
+        
+        if(firstHalf.length() > second.length())
+        {
+            firstHalf.pop_back();
+        } /*else if(second.length() > firstHalf.length()) {
+            second.pop_back();
+        }*/
+
+        return firstHalf.compare(second);
+    }
+};
