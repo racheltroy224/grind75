@@ -1,4 +1,5 @@
-//not completed
+//this solutions runtime was 3 ms beat 91.20% of previous attempts on leetcode 
+//this solutions memory was 8.28 MB which beat 6.72% of previous attempts on leetcode (need to come back and optimize)
 
 class Solution {
 public:
@@ -7,32 +8,45 @@ public:
         string pal = "";
         for(int i = 0; i < s.length(); i++)
         {
-            if(isalpha(s[i]))
+            if(isalpha(s[i]) || isdigit(s[i]))
             {
-                pal.push_back(tolower(s[i]));
+                pal.push_back(toupper(s[i]));
             }
         }
 
-        if(pal.length() == 0)
+        if(pal.length() == 0 || pal.length() == 1)
         {
             return true;
-        } 
-        string firstHalf = pal.substr(0, pal.length()/2);
-        string secondHalf = pal.substr((pal.length()/2), pal.length() - 1);
+        } else if (pal.length() == 2) {
+            return pal[0] == pal[1];
+        }
+
+        string firstHalf = "";
+        string secondHalf = "";
         string second = "";
+
+        
+        for(int i = 0; i < pal.length(); i++)
+        {
+            if(i < pal.length()/2)
+            {
+                firstHalf.push_back(pal[i]);
+            } else {
+                secondHalf.push_back(pal[i]);
+            }
+        }
 
         for(int i = secondHalf.length() - 1; i >= 0; i--)
         {
             second.push_back(secondHalf[i]);
         }
-        
-        if(firstHalf.length() > second.length())
-        {
-            firstHalf.pop_back();
-        } /*else if(second.length() > firstHalf.length()) {
-            second.pop_back();
-        }*/
 
-        return firstHalf.compare(second);
+        if(firstHalf.length() < second.length())
+        {
+            second.pop_back();
+        }
+
+        return firstHalf.compare(second) == 0;
+        
     }
 };
