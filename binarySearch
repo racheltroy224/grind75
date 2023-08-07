@@ -1,0 +1,26 @@
+//this solutions runtime was 35 ms beat 78.04% of previous attempts on leetcode
+//this solutions memory was 27.53 MB which beat 31.56% of previous attempts on leetcode (need to come back and optimize)
+
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        
+        int lower = 0;
+        int upper = nums.size() - 1;
+
+        while(lower <= upper)
+        {
+            int half = (lower + upper)/2;
+            if(nums[half] == target) 
+            {
+                return half;
+            } else if (nums[half] > target) {
+                upper = half - 1;
+            } else {
+                lower = half + 1;
+            }
+        }
+        
+        return -1;
+    }
+};
