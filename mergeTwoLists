@@ -1,0 +1,43 @@
+//this solutions runtime was 3 ms beat 89.5% of previous attempts on leetcode
+//this solutions memory was 15.13 MB which beat 9.90% of previous attempts on leetcode (need to come back and optimize)
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+
+        struct ListNode head;
+        struct ListNode* headIterator = &head;
+        head.next = NULL;
+
+        while(1)
+        {
+            if(list1 == NULL) {
+                headIterator->next = list2;
+                break;
+            } else if (list2 == NULL) {
+                headIterator->next = list1;
+                break;
+            }
+            if(list1->val <= list2->val) {
+                headIterator->next = list1;
+                list1 = list1->next;
+            } else {
+                headIterator->next = list2;
+                list2 = list2->next;
+            }
+            headIterator = headIterator->next;
+        }
+
+        return head.next;
+    }
+};
