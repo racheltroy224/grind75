@@ -3,24 +3,26 @@ Just a bunch of my solutions to the Grind75 problems
 
 Current completed list:
 
-Binary Search : need to go back and optimize memory
+(easy) Binary Search : need to go back and optimize memory
 
-Invert Binary Tree : need to go back and optimize memory
+(easy) Invert Binary Tree : need to go back and optimize memory
 
-Roman Numeral to Integer
+(easy) Roman Numeral to Integer
 
-Two Sum : need to go back and optimize runtime
+(easy) Two Sum : need to go back and optimize runtime
 
-Valid Palindrome : need to go back and optimize memory
+(easy) Valid Palindrome : need to go back and optimize memory
 
-Valid Parenthesis
+(easy) Valid Parenthesis
 
-Lowest Common Ancestor : need to go back and optimize memory
+(easy) Lowest Common Ancestor : need to go back and optimize memory
 
-Balanced Binary Tree : need to go back and optimize memory ALSO got some online assistance 
+(easy) Balanced Binary Tree : need to go back and optimize memory ALSO got some online assistance 
 
-Merge Two Linked Lists: need to go back and optimize memory ALSO got some online assistance
+(easy) Merge Two Linked Lists: need to go back and optimize memory ALSO got some online assistance
 
-Queue with Two Stacks: need to go back and optimize memory
+(easy) Queue with Two Stacks: need to go back and optimize memory
 
-Valid Anagram: need to go back and optimize runtime AND memory
+(easy) Valid Anagram: need to go back and optimize runtime AND memory
+
+(easy) Flood Fill: need to go back and optimize memory
