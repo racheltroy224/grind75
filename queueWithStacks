@@ -1,0 +1,73 @@
+//this solutions runtime was 0 ms beat 100% of previous attempts on leetcode
+//this solutions memory was 7.38 MB which beat 10.71% of previous attempts on leetcode (need to come back and optimize)
+
+class MyQueue {
+public:
+
+    stack<int> holdQueue;
+    stack<int> tempQueue;
+
+    int numElem;
+
+    MyQueue() {
+        numElem = 0;
+    }
+    
+    void push(int x) {
+        this->holdQueue.push(x);
+        this->numElem++;
+    }
+    
+    int pop() {
+        
+        for(int i = 0; i < numElem; i++) {
+            (this->tempQueue).push(this->holdQueue.top());
+            this->holdQueue.pop();
+        }
+
+        int returnVal = this->tempQueue.top();
+        this->tempQueue.pop();
+        numElem--;
+
+        for(int i = 0; i < numElem; i++) {
+            this->holdQueue.push(this->tempQueue.top());
+            this->tempQueue.pop();
+        }
+
+        return returnVal;
+    }
+    
+    int peek() {
+        
+        for(int i = 0; i < numElem; i++) {
+            (this->tempQueue).push(this->holdQueue.top());
+            this->holdQueue.pop();
+        }
+
+        int returnVal = this->tempQueue.top();
+
+        for(int i = 0; i < numElem; i++) {
+            this->holdQueue.push(this->tempQueue.top());
+            this->tempQueue.pop();
+        }
+
+        return returnVal;
+    }
+    
+    bool empty() {
+        if(numElem == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+};
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue* obj = new MyQueue();
+ * obj->push(x);
+ * int param_2 = obj->pop();
+ * int param_3 = obj->peek();
+ * bool param_4 = obj->empty();
+ */
