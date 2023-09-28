@@ -1,0 +1,34 @@
+//this solutions runtime was 682 ms beat 9.53% of previous attempts on leetcode (need to come back and optimize)
+//this solutions memory was 7.71 MB which beat 11.39% of previous attempts on leetcode (need to come back and optimize)
+
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        
+        if(s.length() != t.length()) {
+            return false;
+        }
+
+        char temp = ' ';
+        bool isPresent = false;
+        for(int i = 0; i < s.length(); i++)
+        {
+            temp = s.at(i);
+            isPresent = false;
+            
+            for(int j = 0; j < t.length(); j++) {
+                if(t.at(j) == temp)
+                {
+                    t.erase(j, 1);
+                    isPresent = true;
+                    break;
+                }
+            }
+            if(!isPresent) {
+                return false;
+            }
+        }
+        return true;
+
+    }
+};
