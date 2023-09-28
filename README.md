@@ -26,3 +26,5 @@ Current completed list:
 (easy) Valid Anagram: need to go back and optimize runtime AND memory
 
 (easy) Flood Fill: need to go back and optimize memory
+
+(easy) First Bad Version: need to go back and optimize memory
