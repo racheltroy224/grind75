@@ -1,0 +1,36 @@
+//this solutions runtime was 4 ms which beat 88.16% of previous attempts on leetcode 
+//this solutions memory was 14.87 MB which beat 5.84% of previous attempts on leetcode (need to come back and optimize)
+
+class Solution {
+public:
+    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
+        
+        int originalColor = image[sr][sc];
+        if(image[sr][sc] == color) {
+            return image;
+        } else {
+            image[sr][sc] = color;
+
+            //check all four around
+            if(sr > 0 && image[sr-1][sc] == originalColor) {
+                image = floodFill(image, sr-1, sc, color);
+                image[sr-1][sc] = color;
+            }
+            if(sc > 0 && image[sr][sc-1] == originalColor) {
+                image = floodFill(image, sr, sc-1, color);
+                image[sr][sc-1] = color;
+            }
+            if(sr < image.size()-1 && image[sr+1][sc] == originalColor) {
+                image = floodFill(image, sr+1, sc, color);
+                image[sr+1][sc] = color;
+            }
+            if(sc < image[sr].size()-1 && image[sr][sc+1] == originalColor) {
+                image = floodFill(image, sr, sc+1, color);
+                image[sr][sc+1] = color;
+            } 
+        }
+
+        return image;
+
+    }
+};
