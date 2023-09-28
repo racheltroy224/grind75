@@ -28,3 +28,5 @@ Current completed list:
 (easy) Flood Fill: need to go back and optimize memory
 
 (easy) First Bad Version: need to go back and optimize memory
+
+(easy) Ransom Note: need to go back and optimize runtime AND memory
