@@ -1,0 +1,45 @@
+//this solutions runtime was 0 ms beat 100% of previous attempts on leetcode
+//this solutions memory was 6.38 MB which beat 6.52% of previous attempts on leetcode (need to come back and optimize)
+
+// The API isBadVersion is defined for you.
+// bool isBadVersion(int version);
+
+class Solution {
+public:
+    int firstBadVersion(int n) {
+        
+        if(n == 1) {
+            return 1;
+        }
+        int lower = 1;
+        int higher = n;
+
+        int mid = (higher - lower)/2;
+
+        while(higher-lower > 1) {
+            if(isBadVersion(mid) == false) {
+                if(mid+1 <= n && isBadVersion(mid+1) == true) {
+                    return mid+1;
+                } else {
+                    lower = mid;
+                    mid = lower + (higher - lower)/2;
+                }
+                
+            } else {
+                if(mid-1 > 0 && isBadVersion(mid-1) == false) {
+                    return mid;
+                } else {
+                    higher = mid;
+                    mid = lower + (higher - lower)/2;
+                }
+            }
+            
+        }
+        
+        if(isBadVersion(lower) == true) {
+            return lower;
+        } else {
+            return higher;
+        }
+    }
+};
