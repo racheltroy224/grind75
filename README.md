@@ -22,3 +22,5 @@ Balanced Binary Tree : need to go back and optimize memory ALSO got some online 
 Merge Two Linked Lists: need to go back and optimize memory ALSO got some online assistance
 
 Queue with Two Stacks: need to go back and optimize memory
+
+Valid Anagram: need to go back and optimize runtime AND memory
