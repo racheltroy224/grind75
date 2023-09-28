@@ -1,0 +1,21 @@
+//this solutions runtime was 32 ms beat 5.99% of previous attempts on leetcode (need to come back and optimize)
+//this solutions memory was 9.2 MB which beat 14.84% of previous attempts on leetcode (need to come back and optimize)
+
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        
+        for(int i = 0; i < ransomNote.length(); i++) {
+
+            size_t location = magazine.find(ransomNote.at(i));
+
+            if(location < magazine.length()) {
+                magazine.erase((int)location, 1);
+            } else {
+                return false;
+            }
+
+        }
+        return true;
+    }
+};
