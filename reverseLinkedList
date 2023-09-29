@@ -1,0 +1,38 @@
+//this solutions runtime was 3 ms beat 87.63% of previous attempts on leetcode
+//this solutions memory was 8.59 MB which beat 23.53% of previous attempts on leetcode (need to come back and optimize)
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        
+        if(head == NULL) {
+            return head;
+        }
+
+        ListNode* trailing = nullptr;
+        ListNode* middle = head;
+        ListNode* end;
+        
+        while(middle != nullptr) {
+            end = middle->next;
+            middle->next = trailing;
+            trailing = middle;
+            middle = end;
+        }
+
+        head = trailing;
+
+        return head;
+
+    }
+};
