@@ -34,3 +34,5 @@ Current completed list:
 (easy) Reverse Linked List: need to go back and optimize memory
 
 (easy) Longest Palindrome: need to go back and optimize runtime AND memory
+
+(easy) Best Time to Buy and Sell Stock: need to go back and optimize memory
