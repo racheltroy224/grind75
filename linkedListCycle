@@ -1,0 +1,28 @@
+//this solutions runtime was 11 ms which beat 33.88% of previous attempts on leetcode (need to come back and optimize)
+//this solutions memory was 10.86 MB which beat 8.86% of previous attempts on leetcode (need to come back and optimize)
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        
+        unordered_set<ListNode*> set;
+
+        while(head != NULL) {
+            if(set.find(head) != set.end()) {
+                return true;
+            }
+
+            set.insert(head);
+            head = head->next;
+        }
+        return false;
+    }
+};
