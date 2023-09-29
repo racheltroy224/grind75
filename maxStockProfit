@@ -1,0 +1,23 @@
+//this solutions runtime was 85 ms which beat 88.35% of previous attempts on leetcode
+//this solutions memory was 93.56 MB which beat 24.38% of previous attempts on leetcode (need to come back and optimize)
+
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        
+        int currMax = 0; 
+        int minPos = 0;
+        int currMin = prices[0];
+
+        for(int i = 0; i < prices.size(); i++) {
+            currMax = max(currMax, prices[i] - prices[minPos]);
+            
+            if(prices[i] < currMin) {
+                currMin = prices[i];
+                minPos = i;
+            }
+        }
+
+        return currMax;
+    }
+};
