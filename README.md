@@ -32,3 +32,5 @@ Current completed list:
 (easy) Ransom Note: need to go back and optimize runtime AND memory
 
 (easy) Reverse Linked List: need to go back and optimize memory
+
+(easy) Longest Palindrome: need to go back and optimize runtime AND memory
