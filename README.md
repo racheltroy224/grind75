@@ -30,3 +30,5 @@ Current completed list:
 (easy) First Bad Version: need to go back and optimize memory
 
 (easy) Ransom Note: need to go back and optimize runtime AND memory
+
+(easy) Reverse Linked List: need to go back and optimize memory
