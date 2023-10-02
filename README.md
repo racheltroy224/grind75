@@ -42,3 +42,5 @@ Current completed list:
 (easy) Contains Duplicate: need to go back and optimize runtime AND memory
 
 (medium) Max Subarray: need to go back and optimize memory
+
+(easy) Majority Element: need to go back and optimize memory
