@@ -1,0 +1,24 @@
+//this solutions runtime was 83 ms beat 55.77% of previous attempts on leetcode 
+//this solutions memory was 68.07 MB which beat 18.45% of previous attempts on leetcode (need to come back and optimize)
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        
+        int n = nums.size();
+        if(n == 1) {
+            return nums[0];
+        }
+
+        int temp = nums[0];
+        int currMax = temp;
+
+        for(int i = 1; i < n; i++) {
+            temp = max(temp+nums[i], nums[i]);
+            currMax = max(temp, currMax);
+        }
+
+        return currMax;
+
+    }
+};
