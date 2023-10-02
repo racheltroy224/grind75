@@ -1,0 +1,59 @@
+//this solutions runtime was 11 ms beat 77.20% of previous attempts on leetcode 
+//this solutions memory was 17.44 MB which beat 29.60% of previous attempts on leetcode (need to come back and optimize)
+
+class Solution {
+public:
+    vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
+        
+        vector<vector<int>> finalVec;
+        vector<int> newVec;
+        int s = newInterval[0];
+        int e = newInterval[1];
+        int n = intervals.size();
+        bool ready = false;
+        bool inserted = false;
+        
+        if(n == 0) {
+            finalVec.push_back(newInterval);
+            return finalVec;
+        }
+
+        for(int i = 0; i < n; i++) {
+            if(intervals[i][1] < s || intervals[i][0] > e) {
+                if(ready) {
+                    finalVec.push_back(newInterval);
+                    ready = false;
+                    inserted = true;
+                }
+                
+                if(intervals[i][0] > e && !inserted) {
+                    finalVec.push_back(newInterval);
+                    inserted = true;
+                } 
+                finalVec.push_back(intervals[i]);
+            } else {
+                
+                if(intervals[i][0] < s && intervals[i][1] >= s){
+                    newInterval[0] = intervals[i][0];
+                    s = intervals[i][0];
+                } else if(intervals[i][0] > s) {
+                    newInterval[0] = s;
+                }
+
+                if(intervals[i][0] <= e && intervals[i][1] > e) {
+                    newInterval[1] = intervals[i][1];
+                    ready = true;
+                    
+                } else if(intervals[i][1] <= e) {
+                    newInterval[1] = e;
+                    ready = true;
+                }
+            }
+        }
+        if(finalVec.size() == 0 || !inserted) {
+            finalVec.push_back(newInterval);
+        }
+
+        return finalVec;
+    }
+};
