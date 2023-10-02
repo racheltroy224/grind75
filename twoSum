@@ -1,22 +1,21 @@
 //this solutions runtime was 138 ms beat 48.99% of previous attempts on leetcode (need to come back and optimize)
-//this solutions memory was 10.2 MB which beat 59.79% of previous attempts on leetcode
+//this solutions memory was 10.47 MB which beat 61.44% of previous attempts on leetcode
 
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        vector<int> solution;
 
         int n = nums.size();
+        int n1 = 0;
         for(int i = 0; i < n - 1; i++) {
+            n1 = nums[i];
             for(int j = i + 1; j < n; j++) {
-                if(nums[i] + nums[j] == target)
+                if(n1 + nums[j] == target)
                 {
-                    solution.push_back(i);
-                    solution.push_back(j);
-                    return solution;
+                    return {i, j};
                 }
             }
         }
-        return solution;
+        return {-1, -1};
     }
 };
