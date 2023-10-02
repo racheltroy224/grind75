@@ -1,0 +1,19 @@
+//this solutions runtime was 109 ms which beat 34.29% of previous attempts on leetcode (need to come back and optimize)
+//this solutions memory was 68.83 MB which beat 41.12% of previous attempts on leetcode (need to come back and optimize)
+
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_set<int> used;
+
+        for(int i = 0; i < nums.size(); i++) {
+            if(used.find(nums[i]) == used.end()) {
+                used.insert(nums[i]);
+            } else {
+                return true;
+            }
+        }
+
+        return false;
+    }
+};
