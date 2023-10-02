@@ -38,3 +38,5 @@ Current completed list:
 (easy) Best Time to Buy and Sell Stock: need to go back and optimize memory
 
 (easy) Linked List Cycle: need to go back and optimize runtime AND memory
+
+(easy) Contains Duplicate: need to go back and optimize runtime AND memory
