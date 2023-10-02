@@ -40,3 +40,5 @@ Current completed list:
 (easy) Linked List Cycle: need to go back and optimize runtime AND memory
 
 (easy) Contains Duplicate: need to go back and optimize runtime AND memory
+
+(medium) Max Subarray: need to go back and optimize memory
