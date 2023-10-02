@@ -9,7 +9,7 @@ Current completed list:
 
 (easy) Roman Numeral to Integer
 
-(easy) Two Sum : need to go back and optimize runtime
+(easy) Two Sum : need to go back and optimize runtime (array)
 
 (easy) Valid Palindrome : need to go back and optimize memory
 
@@ -35,12 +35,14 @@ Current completed list:
 
 (easy) Longest Palindrome: need to go back and optimize runtime AND memory
 
-(easy) Best Time to Buy and Sell Stock: need to go back and optimize memory
+(easy) Best Time to Buy and Sell Stock: need to go back and optimize memory (array)
 
 (easy) Linked List Cycle: need to go back and optimize runtime AND memory
 
-(easy) Contains Duplicate: need to go back and optimize runtime AND memory
+(easy) Contains Duplicate: need to go back and optimize runtime AND memory (array)
 
-(medium) Max Subarray: need to go back and optimize memory
+(medium) Max Subarray: need to go back and optimize memory (array)
 
-(easy) Majority Element: need to go back and optimize memory
+(easy) Majority Element: need to go back and optimize memory (array)
+
+(medium) Insert Interval: need to go back and optimize memory (array)
