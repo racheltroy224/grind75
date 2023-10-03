@@ -1,24 +1,27 @@
-//this solutions runtime was 11 ms beat 84.13% of previous attempts on leetcode 
-//this solutions memory was 20.10 MB which beat 7.09% of previous attempts on leetcode (need to come back and optimize)
+//this solutions runtime was 10 ms beat 88.05% of previous attempts on leetcode 
+//this solutions memory was 19.92 MB which beat 15.90% of previous attempts on leetcode (need to come back and optimize)
 
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        
+        int n = nums.size();
+
         int count = 1;
-        int res = nums[0];
-        for(int num : nums) {
-            
-            if(res != num) {
+        int curr = nums[0];
+
+        for(int i = 1; i < n; i++) {
+            if(curr != nums[i]) {
                 count--;
-                if(count == 0) {
-                    res = num;
-                    count = 1;
-                }
             } else {
                 count++;
             }
+
+            if(count == 0) {
+                curr = nums[i];
+                count = 1;
+            }
         }
-        return res;
+
+        return curr;
     }
 };
