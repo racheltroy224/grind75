@@ -1,0 +1,50 @@
+//this solutions runtime was 128 ms beat 56.70% of previous attempts on leetcode 
+//this solutions memory was 24.30 MB which beat 72.69% of previous attempts on leetcode
+
+class Solution {
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        vector<vector<int>> triples;
+        sort(nums.begin(), nums.end());
+
+        int n = nums.size();
+        int i = 0;
+
+        for(int i = 0; i < n - 2; i++) {
+            if(i > 0 && nums[i] == nums[i-1]) {
+                continue;
+            }
+            int currentElem = nums[i];
+
+            int neededElem = -currentElem;
+
+            int left = i + 1;
+            int right = n - 1;
+
+            while(left < right) {
+                int numL = nums[left];
+                int numR = nums[right];
+                if(left > i + 1 && numL == nums[left - 1]) {
+                    left++;
+                    continue;
+                }
+                if(right < n - 1 && numR == nums[right + 1]) {
+                    right--;
+                    continue;
+                }
+
+                int sum = numL + numR;
+                if(sum == neededElem) {
+                    triples.push_back({currentElem, numL, numR});
+                    left++;
+                } else if(sum > neededElem) {
+                    right--;
+                } else {
+                    left++;
+                }
+            }
+        }
+
+        return triples;
+    }
+};
