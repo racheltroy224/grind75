@@ -46,3 +46,5 @@ Current completed list:
 (easy) Majority Element: need to go back and optimize memory (array)
 
 (medium) Insert Interval: need to go back and optimize memory (array)
+
+(medium) 3Sum (array)
