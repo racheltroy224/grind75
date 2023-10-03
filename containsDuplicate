@@ -1,4 +1,4 @@
-//this solutions runtime was 109 ms which beat 34.29% of previous attempts on leetcode (need to come back and optimize)
+//this solutions runtime was 90 ms which beat 80.37% of previous attempts on leetcode 
 //this solutions memory was 68.83 MB which beat 41.12% of previous attempts on leetcode (need to come back and optimize)
 
 class Solution {
