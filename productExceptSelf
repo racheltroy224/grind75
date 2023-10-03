@@ -1,0 +1,65 @@
+//this solutions runtime was 8 ms beat 98.71% of previous attempts on leetcode 
+//this solutions memory was 24.19 MB which beat 67.23% of previous attempts on leetcode
+
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> answer(n);
+        
+        //second attempt
+        answer[0] = 1; //might not be necessary
+        //getting everything from the right side of the position
+        for(int i = 1; i < n; i++) {
+            answer[i] = answer[i-1] * nums[i-1];
+        }
+
+        int right = 1;
+        //get everything from the left side of the position
+        for(int j = n - 1; j >= 0; j--)
+        {
+            answer[j] *= right;
+            right *= nums[j];
+        }
+
+        /*
+        //first attempt
+        int before = 1;
+        int currentProduct = 1;
+
+        for(int i = 0; i < nums.size(); i++) {
+            int right = n - 1;
+            int left = i + 1;
+            if(i > 0 && nums[i] == 1) {
+                answer.push_back(currentProduct*before);
+                continue;
+            }
+            if(i > 0 && nums[i] == -1) {
+                answer.push_back(currentProduct*before*-1);
+                before *= -1;
+                currentProduct *= -1;
+                continue;
+            }
+            currentProduct = 1;
+            if(before == 0) {
+                answer.push_back(before);
+                continue;
+            } 
+
+            while(left <= right) {
+                if(left == right) {
+                    currentProduct = currentProduct * nums[left];
+                } else {
+                    currentProduct = currentProduct * nums[left] * nums[right];
+                }
+                right--;
+                left++;
+            }
+            answer.push_back(currentProduct*before);
+            before = before*nums[i];
+            
+        }*/
+
+        return answer;
+    }
+};
