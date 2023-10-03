@@ -48,3 +48,5 @@ Current completed list:
 (medium) Insert Interval: need to go back and optimize memory (array)
 
 (medium) 3Sum (array)
+
+(medium) Product Except Self (array)
