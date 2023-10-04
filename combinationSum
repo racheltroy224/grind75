@@ -1,0 +1,35 @@
+//this solutions runtime was 4 ms beat 74.67% of previous attempts on leetcode 
+//this solutions memory was 11.29 MB which beat 47.85% of previous attempts on leetcode (need to come back and optimize)
+
+class Solution {
+public:
+    vector<vector<int>> finalVector;
+    vector<int> cand;
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        
+        sort(candidates.begin(), candidates.end());
+
+        vector<int> current;
+        cand = candidates;
+
+        combination(0, current, target);
+
+        return finalVector;
+    }
+
+    void combination(int first, vector<int>& current, int target) {
+        if(target == 0) {
+            finalVector.push_back(current);
+            return;
+        }
+
+        for(int i = first; i < cand.size(); i++) {
+            if(target < cand[i]) {
+                break;
+            }
+            current.push_back(cand[i]);
+            combination(i, current, target-cand[i]);
+            current.pop_back();
+        }
+    }
+};
