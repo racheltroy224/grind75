@@ -41,9 +41,9 @@ Current completed list:
 
 (easy) Contains Duplicate: need to go back and optimize memory (array)
 
-(medium) Max Subarray: need to go back and optimize memory (array)
+(medium) Max Subarray (array)
 
-(easy) Majority Element: need to go back and optimize memory (array)
+(easy) Majority Element (array)
 
 (medium) Insert Interval: need to go back and optimize memory (array)
 
