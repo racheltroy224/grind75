@@ -1,0 +1,22 @@
+//this solutions runtime was 42 ms beat 49.52% of previous attempts on leetcode 
+//this solutions memory was 15.97 MB which beat 70.49% of previous attempts on leetcode
+
+class Solution {
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        
+        let theCount = nums.count;
+        var newTarget: Int = target;
+
+        for i in 0...theCount - 1 {
+            newTarget = target - nums[i];
+
+            for j in i+1...theCount - 1 {
+                if newTarget == nums[j] {
+                    return [i, j];
+                }
+            }
+        }
+        
+        return [0, 1];
+    }
+}
