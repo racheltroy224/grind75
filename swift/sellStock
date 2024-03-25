@@ -1,0 +1,19 @@
+//this solutions runtime was 287 ms beat 53.39% of previous attempts on leetcode 
+//this solutions memory was 19.00 MB which beat 60.01% of previous attempts on leetcode
+
+class Solution {
+    func maxProfit(_ prices: [Int]) -> Int {
+        var lowest = prices[0]
+        var currMaxProfit = 0;
+
+        for item in prices {
+            if item < lowest {
+                lowest = item
+                continue
+            }
+            currMaxProfit = max(currMaxProfit, item - lowest)
+        }
+
+        return currMaxProfit
+    }
+}
