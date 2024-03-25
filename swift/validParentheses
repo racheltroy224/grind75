@@ -1,0 +1,42 @@
+//this solutions runtime was 0 ms beat 100% of previous attempts on leetcode 
+//this solutions memory was 16.05 MB which beat 58.36% of previous attempts on leetcode
+
+class Solution {
+    func isValid(_ s: String) -> Bool {
+        var theStack = [Character]()
+
+        for char in s {
+            switch char {
+                case "[", "(", "{":
+                    theStack.append(char)
+                case "]":
+                    if theStack.count != 0 && theStack[theStack.count - 1] == "[" {
+                        theStack.remove(at: theStack.count - 1)
+                    } else {
+                        return false
+                    }
+                case ")":
+                    if theStack.count != 0 && theStack[theStack.count - 1] == "(" {
+                        theStack.remove(at: theStack.count - 1)
+                    } else {
+                        return false
+                    }
+                case "}":
+                    if theStack.count != 0 && theStack[theStack.count - 1] == "{" {
+                        theStack.remove(at: theStack.count - 1)
+                    } else {
+                        return false
+                    }
+                default:
+                    return false
+            }
+        }
+
+        if(theStack.count != 0) {
+            return false;
+        } else {
+            return true;
+        }
+        
+    }
+}
