@@ -1,0 +1,25 @@
+//this solutions runtime was 13 ms which beat 90.07% of previous attempts on leetcode 
+//this solutions memory was 17.93 MB which beat 35.88% of previous attempts on leetcode (need to come back and optimize)
+
+class Solution {
+    func isAnagram(_ s: String, _ t: String) -> Bool {
+        if s.count != t.count {
+            return false
+        }
+
+        var hash = [Character:Int]()
+
+        for char in s {
+            hash[char, default: 0] += 1
+        }
+
+        for char in t {
+            if let count = hash[char], count > 0 {
+                hash[char] = count - 1
+            } else {
+                return false
+            }
+        }
+        return true
+    }
+}
