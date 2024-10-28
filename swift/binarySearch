@@ -1,0 +1,23 @@
+//this solutions runtime was 0 ms which beat 100.00% of previous attempts on leetcode 
+//this solutions memory was 17.79 MB which beat 5.52% of previous attempts on leetcode (need to come back and optimize)
+
+class Solution {
+    func search(_ nums: [Int], _ target: Int) -> Int {
+        var lower = 0
+        var upper = nums.count - 1
+
+        while lower <= upper {
+            var middle = (upper + lower) / 2
+
+            if target == nums[middle] {
+                return middle
+            } else if target > nums[middle] {
+                lower = middle + 1
+            } else {
+                upper = middle - 1
+            }
+        }
+
+        return -1
+    }
+}
