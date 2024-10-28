@@ -1,0 +1,20 @@
+//this solutions runtime was 17 ms which beat 29.60% of previous attempts on leetcode (need to come back and optimize)
+//this solutions memory was 20.62 MB which beat 51.30% of previous attempts on leetcode
+
+class Solution {
+    func containsDuplicate(_ nums: [Int]) -> Bool {
+        if nums.count == 1 {
+            return false
+        }
+
+        var nums2 = Set<Int>()
+        for item in nums {
+            if nums2.contains(item) {
+                return true
+            } else {
+                nums2.insert(item)
+            }
+        }
+        return false
+    }
+}
