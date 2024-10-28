@@ -1,0 +1,22 @@
+//this solutions runtime was 13 ms which beat 87.19% of previous attempts on leetcode 
+//this solutions memory was 18.92 MB which beat 17.05% of previous attempts on leetcode (need to come back and optimize)
+
+class Solution {
+    func isPalindrome(_ s: String) -> Bool {
+        var wordArr = [Character]()
+        for char in s.lowercased() {
+            if char.isLetter || char.isNumber {
+                wordArr += [char]
+            }
+        }
+
+        var arrayCount = wordArr.count
+        for i in 0..<arrayCount/2 {
+            if wordArr[i] != wordArr[arrayCount - i - 1] {
+                return false
+            }
+        }
+
+        return true
+    }
+}
