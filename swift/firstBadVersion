@@ -1,0 +1,36 @@
+//this solutions runtime was 4 ms which beat 53.66% of previous attempts on leetcode 
+//this solutions memory was 15.30 MB which beat 66.54% of previous attempts on leetcode
+
+/**
+ * The knows API is defined in the parent class VersionControl.
+ *     func isBadVersion(_ version: Int) -> Bool{}
+ */
+
+class Solution : VersionControl {
+    func firstBadVersion(_ n: Int) -> Int {
+        var lower = 0
+        var upper = n
+
+        while lower < upper {
+            var middle = (lower + upper) / 2
+
+            if isBadVersion(middle) {
+                if middle > 0 && !isBadVersion(middle-1) {
+                    return middle
+                } else {
+                    upper = middle
+                }
+            } else {
+                if middle < n {
+                    if isBadVersion(middle + 1) {
+                        return middle + 1
+                    } else {
+                        lower = middle
+                    }
+                }
+            }
+        }
+
+        return -1
+    }
+}
