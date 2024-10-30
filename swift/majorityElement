@@ -1,0 +1,27 @@
+//this solutions runtime was 0 ms which beat 100.00% of previous attempts on leetcode 
+//this solutions memory was 17.36 MB which beat 66.31% of previous attempts on leetcode
+
+class Solution {
+    func majorityElement(_ nums: [Int]) -> Int {
+        if nums.count == 1 {
+            return nums[0]
+        }
+
+        var currNum = nums[0]
+        var currCount = 1
+
+        for i in 1..<nums.count {
+            if nums[i] != currNum {
+                if currCount != 0 {
+                    currCount -= 1
+                } else {
+                    currNum = nums[i]
+                    currCount = 1
+                }
+            } else {
+                currCount += 1
+            }
+        }
+        return currNum
+    }
+}
